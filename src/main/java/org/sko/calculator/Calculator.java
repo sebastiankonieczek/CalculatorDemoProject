@@ -3,11 +3,11 @@ package org.sko.calculator;
 import org.sko.calculator.calculations.Expression;
 import org.sko.calculator.calculations.ExpressionHandlerProvider;
 
-public final class Calculator {
+public class Calculator {
   private final ExpressionHandlerProvider expressionHandlerProvider;
 
-  public Calculator() {
-    expressionHandlerProvider = new ExpressionHandlerProvider();
+  public Calculator(final ExpressionHandlerProvider expressionHandlerProvider) {
+    this.expressionHandlerProvider = expressionHandlerProvider;
   }
 
   public double calculate(final Expression calculationExpression) {
