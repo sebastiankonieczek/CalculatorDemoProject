@@ -1,18 +1,21 @@
 plugins {
-   java
+    java
 }
 
 repositories {
-   mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-   testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
-   testImplementation("org.mockito:mockito-core:4.4.0")
-   testImplementation("org.assertj:assertj-core:3.22.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
+    testImplementation("org.mockito:mockito-core:4.4.0")
+    testImplementation("org.assertj:assertj-core:3.22.0")
 }
 
 tasks.named<Test>("test") {
-   // Use JUnit Platform for unit tests.
-   useJUnitPlatform()
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+    testLogging {
+        events("PASSED", "SKIPPED", "FAILED", "STANDARD_OUT", "STANDARD_ERROR")
+    }
 }
