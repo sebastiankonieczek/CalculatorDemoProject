@@ -11,7 +11,7 @@ public final class Calculator {
   }
 
   public double calculate(final Expression calculationExpression) {
-    final var expressionHandler = expressionHandlerProvider.provider(calculationExpression);
+    final var expressionHandler = expressionHandlerProvider.provide( calculationExpression);
     return expressionHandler.evaluate(this, calculationExpression);
   }
 }

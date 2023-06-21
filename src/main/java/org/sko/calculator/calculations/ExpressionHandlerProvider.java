@@ -8,7 +8,7 @@ public class ExpressionHandlerProvider {
    private static final MultiplyHandler MULTIPLY_HANDLER = new MultiplyHandler();
    private static final ValueHandler VALUE_HANDLER = new ValueHandler();
 
-   public <T extends Expression> ExpressionHandler<T> provider(final T expression) {
+   public <T extends Expression> ExpressionHandler<T> provide( final T expression) {
 
       return switch( expression ) {
          case Plus plus -> (ExpressionHandler<T>)PLUS_HANDLER;
