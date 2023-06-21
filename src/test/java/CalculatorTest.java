@@ -28,7 +28,7 @@ class CalculatorTest {
     final var expressionHandler = mock(ExpressionHandler.class);
     final var calculationExpression = mock(Expression.class);
 
-    when(expressionHandlerProvider.provider(calculationExpression)).thenReturn(expressionHandler);
+    when(expressionHandlerProvider.provide(calculationExpression)).thenReturn(expressionHandler);
     when(expressionHandler.evaluate(calculator, calculationExpression)).thenReturn(expectedResult);
 
     final var result = calculator.calculate(calculationExpression);

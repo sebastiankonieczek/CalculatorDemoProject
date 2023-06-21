@@ -32,7 +32,7 @@ class ExpressionHandlerProviderTest {
   <T extends Expression> void test(
       final T expression, final Class<ExpressionHandler<T>> expressionHandlerClass) {
 
-    final var expressionHandler = expressionHandlerProvider.provider(expression);
+    final var expressionHandler = expressionHandlerProvider.provide(expression);
     assertThat(expressionHandler).isInstanceOf(expressionHandlerClass);
   }
 
@@ -40,7 +40,7 @@ class ExpressionHandlerProviderTest {
   void test_throws_exception_on_unknown_expression() {
 
     final Expression expression = mock(Expression.class);
-    assertThatThrownBy(() -> expressionHandlerProvider.provider(expression))
+    assertThatThrownBy(() -> expressionHandlerProvider.provide(expression))
         .isInstanceOf(IllegalArgumentException.class);
   }
 }
